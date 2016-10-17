@@ -1,6 +1,9 @@
-
+var _ = require('lodash');
+var fs = require('fs');
+var Handlebars = require('handlebars');
+var http = require('http');
+var request = require('request');
 var BaseController = require("./base")//, 
-//     alarmFactory = require('../factories/alarm');
 
 
 var options = {
@@ -21,7 +24,8 @@ module.exports = BaseController.extend({
         console.log('Inside the test route');
 
     },
-    getShedule: function () {
+    getShedule: function (req, res) {
+        console.log('Inside the getShedule route');
         // Call the publication sports API
         request.get(fullUri, function (err, response, body) {
             if (!err && response.statusCode == 200) {
@@ -53,6 +57,7 @@ module.exports = BaseController.extend({
     },
 
     getStats: function () {
+        console.log('Inside the getStats route');
 
     }
 });
