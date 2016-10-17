@@ -6,13 +6,22 @@ var request = require('request');
 var BaseController = require("./base")//, 
 
 
+// var options = {
+//     host: 'sslsags.publicationsports.com',
+//     port: 80,
+//     method: 'GET',
+//     schedule_path: '/serviceV2/service.php?lang=fr&batch[0][request]=TeamSchedule&batch[0][type]=league&batch[0][id]=27&batch[0][seasonId]=7&batch[0][subSeasonId]=1&batch[0][categoryId]=5881&batch[0][teamId]=38237',
+//     stats_path: 'https://sags3.publicationsports.com/serviceV2/service.php?lang=fr&batch[0][request]=OrganisationInformation&batch[0][type]=league&batch[0][id]=27&batch[0][seasonId]=8&batch[0][subSeasonId]=1&batch[0][categoryId]=6796&batch[1][request]=TeamSchedule&batch[1][type]=league&batch[1][id]=27&batch[1][seasonId]=8&batch[1][subSeasonId]=1&batch[1][categoryId]=6796&batch[1][teamId]=50000&callback=jQuery20306931698515771785_1476237641759&_=1476237641760'
+// };
 var options = {
     host: 'sslsags.publicationsports.com',
     port: 80,
     method: 'GET',
-    schedule_path: '/serviceV2/service.php?lang=fr&batch[0][request]=TeamSchedule&batch[0][type]=league&batch[0][id]=27&batch[0][seasonId]=7&batch[0][subSeasonId]=1&batch[0][categoryId]=5881&batch[0][teamId]=38237',
-    stats_path: 'https://sags3.publicationsports.com/serviceV2/service.php?lang=fr&batch%5B0%5D%5Brequest%5D=OrganisationInformation&batch%5B0%5D%5Btype%5D=league&batch%5B0%5D%5Bid%5D=27&batch%5B0%5D%5BseasonId%5D=8&batch%5B0%5D%5BsubSeasonId%5D=1&batch%5B0%5D%5BcategoryId%5D=6796&batch%5B1%5D%5Brequest%5D=TeamSchedule&batch%5B1%5D%5Btype%5D=league&batch%5B1%5D%5Bid%5D=27&batch%5B1%5D%5BseasonId%5D=8&batch%5B1%5D%5BsubSeasonId%5D=1&batch%5B1%5D%5BcategoryId%5D=6796&batch%5B1%5D%5BteamId%5D=50000&callback=jQuery20306931698515771785_1476237641759&_=1476237641760'
+    schedule_path: '/serviceV2/service.php?lang=fr&batch[0][request]=OrganisationInformation&batch[0][type]=league&batch[0][id]=27&batch[0][seasonId]=8&batch[0][subSeasonId]=1&batch[0][categoryId]=6796&batch[1][request]=TeamSchedule&batch[1][type]=league&batch[1][id]=27&batch[1][seasonId]=8&batch[1][subSeasonId]=1&batch[1][categoryId]=6796&batch[1][teamId]=50000',
+
+    stats_path: 'https://sags3.publicationsports.com/serviceV2/service.php?lang=fr&batch[0][request]=OrganisationInformation&batch[0][type]=league&batch[0][id]=27&batch[0][seasonId]=8&batch[0][subSeasonId]=1&batch[0][categoryId]=6796&batch[1][request]=TeamSchedule&batch[1][type]=league&batch[1][id]=27&batch[1][seasonId]=8&batch[1][subSeasonId]=1&batch[1][categoryId]=6796&batch[1][teamId]=50000'
 };
+
 var fullUri = 'http://' + options.host + options.schedule_path;
 
 var scheduleData = {};
