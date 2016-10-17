@@ -9,9 +9,8 @@ var bodyParser = require('body-parser');
 var exphbs  = require('express-handlebars');
 var _ = require('lodash');
 
-var routes = require('./routes/index');
-var users = require('./routes/user');
-var stats = require('./routes/stats');
+// var routes = require('./routes/index');
+// var stats = require('./routes/stats');
 
 var app = express();
 
@@ -37,9 +36,14 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/stats', stats);
+// app.use('/', routes);
+// app.use('/stats', stats);
+/*********************************************************************
+* Routes
+*********************************************************************/
+var router = express.Router();
+router.use('/', require('./routes/stats')());
+app.use('/', router);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
