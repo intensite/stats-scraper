@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+
+  <table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Heure</th>
+            <th>Type</th>
+            <th>Visiteur</th>
+            <th>Local</th>
+            <th>Lieu</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Jeudi le 24 septembre</td>
+            <td>19:00</td>
+            <td>Pratique 1/2 Glace</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>LA PLAINE 1</td>
+        </tr>
+        <tr>
+            <td>Samedi le 26 septembre</td>
+            <td>17:30</td>
+            <td>Match Officiel</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>GAULOIS BLEU DE ST-LIN-LAURENTIDES</td>
+            <td>ST-LIN</td>
+        </tr>
+        <tr>
+            <td>Dimanche le 27 septembre</td>
+            <td>16:00</td>
+            <td>Match Officiel</td>
+            <td>FAUCONS DE S.A.D.P.</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>TERREBONNE 1</td>
+        </tr>
+        <tr>
+            <td>Mercredi le 30 septembre</td>
+            <td>19:30</td>
+            <td>Pratique 1/2 Glace</td>
+            <td>EXPLORATEURS DE TERREBONNE</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>TERREBONNE 1</td>
+        </tr>
+        <tr>
+            <td>Vendredi le 02 octobre</td>
+            <td>19:30</td>
+            <td>Pratique 1/2 Glace</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>SIEURS DE TERREBONNE</td>
+            <td>TERREBONNE 2</td>
+        </tr>
+        <tr>
+            <td>Samedi le 03 octobre</td>
+            <td>14:30</td>
+            <td>Match Officiel</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>MOUSQUETAIRES DE LACHENAIE</td>
+            <td>LACHENAIE 2</td>
+        </tr>
+        <tr>
+            <td>Dimanche le 04 octobre</td>
+            <td>15:30</td>
+            <td>Match Officiel</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>GAULOIS BLANC DE ST-LIN-LAURENTIDES</td>
+            <td>ST-LIN</td>
+        </tr>
+        <tr>
+            <td>Samedi le 10 octobre</td>
+            <td>16:00</td>
+            <td>Match Officiel</td>
+            <td>COBRAS DE LA PLAINE</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>TERREBONNE 2</td>
+        </tr>
+        <tr>
+            <td>Mardi le 13 octobre</td>
+            <td>20:30</td>
+            <td>Pratique 1/2 Glace</td>
+            <td>EXPLORATEURS DE TERREBONNE</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>TERREBONNE 1</td>
+        </tr>
+        <tr>
+            <td>Samedi le 17 octobre</td>
+            <td>15:00</td>
+            <td>Match Officiel</td>
+            <td>CHEVALIERS DE LACHENAIE</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>TERREBONNE 2</td>
+        </tr>
+        <tr>
+            <td>Dimanche le 18 octobre</td>
+            <td>18:30</td>
+            <td>Match Officiel</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>MARAUDEURS MASCOUCHE</td>
+            <td>MASCOUCHE 2</td>
+        </tr>
+        <tr>
+            <td>Lundi le 19 octobre</td>
+            <td>19:00</td>
+            <td>Pratique 1/2 Glace</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>TERREBONNE 1</td>
+        </tr>
+        <tr>
+            <td>Mercredi le 28 octobre</td>
+            <td>19:30</td>
+            <td>Pratique pleine glace</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td></td>
+            <td>TERREBONNE 1</td>
+        </tr>
+        <tr>
+            <td>Mercredi le 04 novembre</td>
+            <td>20:30</td>
+            <td>Pratique 1/2 Glace</td>
+            <td>EXPLORATEURS DE TERREBONNE</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>TERREBONNE 1</td>
+        </tr>
+        <tr>
+            <td>Lundi le 09 novembre</td>
+            <td>20:00</td>
+            <td>Pratique 1/2 Glace</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>EXPLORATEURS DE TERREBONNE</td>
+            <td>TERREBONNE 1</td>
+        </tr>
+        <tr>
+            <td>Mercredi le 18 novembre</td>
+            <td>20:30</td>
+            <td>Pratique 1/2 Glace</td>
+            <td>SIEURS DE TERREBONNE</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>TERREBONNE 1</td>
+        </tr>
+        <tr>
+            <td>Vendredi le 27 novembre</td>
+            <td>20:30</td>
+            <td>Pratique pleine glace</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td></td>
+            <td>TERREBONNE 2</td>
+        </tr>
+        <tr>
+            <td>Lundi le 30 novembre</td>
+            <td>19:00</td>
+            <td>Pratique 1/2 Glace</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>GOUVERNEURS DE TERREBONNE</td>
+            <td>TERREBONNE 1</td>
+        </tr>
+    </tbody>
+
+</table>
+
+
+
+  </body>
+</html>
