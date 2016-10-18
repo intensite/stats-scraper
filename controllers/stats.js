@@ -52,6 +52,8 @@ module.exports = BaseController.extend({
                 };
 
 
+                res.send(data);
+                return;
                 //res.send(scheduleData);
                 //console.log(app.get('views') + 'calendar.handlebars');
                 //console.log(app.engine(handlebars).compile(app.get('views') + 'calendar.handlebars'));
@@ -84,12 +86,12 @@ module.exports = BaseController.extend({
                 };
 
 
-                //  res.send(data);
-                //  return;
+                // res.send(data);
+                // return;
                 //console.log(app.get('views') + 'calendar.handlebars');
                 //console.log(app.engine(handlebars).compile(app.get('views') + 'calendar.handlebars'));
                 res.render('stats', data, function (err, html) {
-                    //console.log(html);
+                    console.log(err);
                     fs.writeFile('stats.html', html, function (err) {
                         if (err) throw err;
                         console.log('It\'s saved! in same location.');
@@ -147,6 +149,11 @@ function cleanJsonStatsData(rawPSdata) {
         };
 
         cleaData.standingData = rawPSdata.data[1].data.standingData;
+
+        // Filter the stupid use of the keyword null as a property
+        _.forEach(cleaData.standingData, function(element){
+            element.tie = element["null"];
+        });
 
         console.log('Returning from cleanJsonData............');
         return cleaData.standingData;
