@@ -1,0 +1,38 @@
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Equipe</th>
+            <th>PJ</th>
+            <th>V</th>
+            <th>D</th>
+            <th>N</th>
+            <th>BP</th>
+            <th>BC</th>
+            <th>Diff</th>
+            <th>%%</th>
+            <th>FJ</th>
+            <th>Pts</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each standingData}}
+        <tr>
+            <td>{{this.rank}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.played}}</td>
+            <td>{{this.normalWin}}</td>
+            <td>{{this.normalLoss}}</td>
+            <td>{{this.null}}</td>
+            <td>{{this.goalsFor}}</td>
+            <td>{{this.goalsAgainst}}</td>
+            <td>{{this.differencial}}</td>
+            <td>{{this.moyen}}</td>
+            <td>{{this.fairPlayPTS}}</td>
+            <td>{{this.pts}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+{{debug}}

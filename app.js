@@ -22,7 +22,20 @@ app.locals.ENV_DEVELOPMENT = env == 'development';
 
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
-  partialsDir: ['views/partials/']
+  partialsDir: ['views/partials/'],
+  helpers: {
+      debug: function(optionalValue) {
+            console.log("Current Context");
+            console.log("====================");
+            console.log(this);
+            
+            if (optionalValue) {
+                console.log("Value");
+                console.log("====================");
+                console.log(optionalValue);
+            }
+        }
+  }
 }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
