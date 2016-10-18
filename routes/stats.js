@@ -5,10 +5,6 @@ module.exports = function( ) {
 
     console.log('Inside the stats route...........................................');
 
-    // router.route( '/' )
-    //     .get( controller.list )
-    //     .post( controller.create );
-        
     router.route( '/getStats' )
         .get( controller.getStats );
     router.route( '/getShedule' )
