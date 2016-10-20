@@ -1,5 +1,6 @@
 var _ = require('lodash');
 var fs = require('fs');
+var moment = require('moment');
 var Handlebars = require('handlebars');
 var http = require('http');
 var request = require('request');
@@ -40,8 +41,9 @@ module.exports = BaseController.extend({
                     scheduleData: scheduleData
                 };
 
-                // res.send(cleanedApiData);
+                // res.send(data);
                 // return;
+                
                 res.render('calendar', data, function (err, html) {
                     fs.writeFile('schedule.html', html, function (err) {
                         if (err) throw err;
@@ -138,6 +140,12 @@ function cleanJsonStatsData(rawPSdata) {
 function extractFullSchedule(apiData) {
 
     _.forEach(apiData.eventsInfo, function (event) {
+        // Add a real date
+        var realDate = moment(event.date, 'DD MMM', 'fr');
+        // if(realDate.month() < 6) {realDate.add(1, 'y')};  // Fix the year since moment assumes current year (May need to be revised in january)
+        if(realDate.month() < 6) {realDate.year(2017)};  // Fix the year since moment assumes current year (May need to be revised in january)
+        event.realDate = realDate.format('YYYY-MM-DD');
+
         event.eventTypeName = _.result(_.find(apiData.eventsTypes, {'eventTypeId': event.eventTypeId}), 'name');
         event.locationName = _.result(_.find(apiData.locationsInfo, {'locationId': event.locationId}), 'locationName');
         event.visitorTeamName = _.result(_.find(apiData.teamsInfo, {'teamId': event.eventVisitorTeamId}), 'name');
