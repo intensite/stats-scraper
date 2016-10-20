@@ -9,6 +9,8 @@ var options = {
     host: 'sags3.publicationsports.com',
     port: 80,
     method: 'GET',
+
+
     schedule_path: '/serviceV2/service.php?lang=fr&batch[0][request]=OrganisationInformation&batch[0][type]=league&batch[0][id]=27&batch[0][seasonId]=8&batch[0][subSeasonId]=1&batch[0][categoryId]=6796&batch[1][request]=TeamSchedule&batch[1][type]=league&batch[1][id]=27&batch[1][seasonId]=8&batch[1][subSeasonId]=1&batch[1][categoryId]=6796&batch[1][teamId]=50000',
 
     stats_path: '/serviceV2/service.php?lang=fr&batch[0][request]=OrganisationInformation&batch[0][type]=league&batch[0][id]=27&batch[0][seasonId]=8&batch[0][subSeasonId]=1&batch[0][categoryId]=6796&batch[1][request]=Standing&batch[1][type]=league&batch[1][id]=27&batch[1][seasonId]=8&batch[1][subSeasonId]=1&batch[1][categoryId]=6796'
@@ -38,7 +40,7 @@ module.exports = BaseController.extend({
                     scheduleData: scheduleData
                 };
 
-                // res.send(data);
+                // res.send(cleanedApiData);
                 // return;
                 res.render('calendar', data, function (err, html) {
                     fs.writeFile('schedule.html', html, function (err) {
@@ -134,12 +136,15 @@ function cleanJsonStatsData(rawPSdata) {
 }
 
 function extractFullSchedule(apiData) {
-    _.forEach(apiData.eventsInfo, function (event) {
-        event.eventTypeName = _.result(_.find(apiData.eventsTypes, 'eventTypeId', event.eventTypeId), 'name');
-        event.locationName = _.result(_.find(apiData.locationsInfo, 'locationId', event.locationId), 'locationName');
-        event.visitorTeamName = _.result(_.find(apiData.teamsInfo, 'teamId', event.eventVisitorTeamId), 'name');
-        event.localTeamName = _.result(_.find(apiData.teamsInfo, 'teamId', event.eventLocalTeamId), 'name');
-    });
 
+    _.forEach(apiData.eventsInfo, function (event) {
+        event.eventTypeName = _.result(_.find(apiData.eventsTypes, {'eventTypeId': event.eventTypeId}), 'name');
+        event.locationName = _.result(_.find(apiData.locationsInfo, {'locationId': event.locationId}), 'locationName');
+        event.visitorTeamName = _.result(_.find(apiData.teamsInfo, {'teamId': event.eventVisitorTeamId}), 'name');
+        event.localTeamName = _.result(_.find(apiData.teamsInfo, {'teamId': event.eventLocalTeamId}), 'name');
+    });
+    // console.log('After treatment.................');
+    // console.log(apiData);
+    
     return apiData.eventsInfo;
 }
